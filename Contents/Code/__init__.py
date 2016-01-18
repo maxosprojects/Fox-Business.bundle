@@ -8,6 +8,8 @@ SHOW_CLIPS = 'http://video.foxbusiness.com/v/feed/page/show-clips.json'
 ###################################################################################################
 def Start():
 
+  ObjectContainer.art = R(ART)
+  DirectoryObject.thumb = R(ICON)
   ObjectContainer.title1 = TITLE
   HTTP.CacheTime = 1800
 
@@ -150,7 +152,7 @@ def Playlist(title, url):
       url = 'http://video.foxbusiness.com/v/%s' % id,
       title = title,
       summary = summary,
-      thumb = Resource.ContentsOfURLWithFallback(url=thumb),
+      thumb = Resource.ContentsOfURLWithFallback(url=thumb, fallback=ICON),
       duration = duration,
       originally_available_at = originally_available_at
     ))
