@@ -1,4 +1,7 @@
 TITLE = 'Fox Business'
+ART  = 'art-default.jpg'
+ICON = 'icon-default.jpg'
+
 NEWS_CLIPS = 'http://video.foxbusiness.com/v/feed/page/news-clips.json'
 SHOW_CLIPS = 'http://video.foxbusiness.com/v/feed/page/show-clips.json'
 
@@ -9,7 +12,7 @@ def Start():
   HTTP.CacheTime = 1800
 
 ###################################################################################################
-@handler('/video/foxbusiness', TITLE)
+@handler('/video/foxbusiness', TITLE, art=ART, thumb=ICON)
 def MainMenu():
 
   oc = ObjectContainer()
